@@ -16,6 +16,7 @@ export const OnOff = (props: PropsType) => {
       display: 'inline-block',
       padding: '5px',
       backgroundColor: on ? 'green' : 'white',
+      transitionDuration: '0.2s',
    };
    const offStyle = {
       cursor: 'pointer',
@@ -26,6 +27,7 @@ export const OnOff = (props: PropsType) => {
       margin: '0px 15px 0px 5px',
       padding: '5px',
       backgroundColor: on ? 'white' : 'red',
+      transitionDuration: '0.2s',
    };
    const indicatorStyle = {
       width: '10px',
@@ -34,6 +36,7 @@ export const OnOff = (props: PropsType) => {
       border: '1px solid black',
       display: 'inline-block',
       backgroundColor: on ? 'green' : 'red',
+      transitionDuration: '0.3s',
    };
    return (
       <div style={{ padding: '10px' }}>
