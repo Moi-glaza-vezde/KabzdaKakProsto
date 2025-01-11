@@ -15,21 +15,16 @@ function hellow() {
 // hellow();
 
 function App() {
+   const value = 0 | 1 | 2 | 3 | 4 | 5;
    return (
-      <div>
+      <div className="app">
          <OnOff />
-         <OnOff />
-         <OnOff />
-         <UnControlledAccordion title={'Users'} />
+
          <UnControlledAccordion title={'Menu'} />
+         <Accordion1 closed={false} title={'Users'} />
+
          <UnControlledReating />
-         {/* <Accordion1 closed={true} title={'Users'} /> */}
-         {/* <Accordion1 title={'Menu'} /> */}
-         {/* <Rating value={1} />
-         <Rating value={2} />
          <Rating value={3} />
-         <Rating value={4} />
-         <Rating value={5} /> */}
       </div>
    );
 }

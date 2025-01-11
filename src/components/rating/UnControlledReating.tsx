@@ -1,64 +1,32 @@
 import React, { useState } from 'react';
-
+type RatingPropsType = {
+   value: 0 | 1 | 2 | 3 | 4 | 5;
+};
 export const UnControlledReating = () => {
-   let [selected1, setSelected1] = useState(false);
-   let [selected2, setSelected2] = useState(false);
-   let [selected3, setSelected3] = useState(false);
-   let [selected4, setSelected4] = useState(false);
-   let [selected5, setSelected5] = useState(false);
-
+   let [value, setValue] = useState<0 | 1 | 2 | 3 | 4 | 5>(0);
    return (
       <div>
-         <Star selected={selected1} />{' '}
-         <button
-            onClick={() => {
-               setSelected1(!selected1);
-            }}>
-            1
-         </button>
-         <Star selected={selected2} />{' '}
-         <button
-            onClick={() => {
-               setSelected2(!selected2);
-            }}>
-            2
-         </button>
-         <Star selected={selected3} />{' '}
-         <button
-            onClick={() => {
-               setSelected3(!selected3);
-            }}>
-            3
-         </button>
-         <Star selected={selected4} />{' '}
-         <button
-            onClick={() => {
-               setSelected4(!selected4);
-            }}>
-            4
-         </button>
-         <Star selected={selected5} />{' '}
-         <button
-            onClick={() => {
-               setSelected5(!selected5);
-            }}>
-            5
-         </button>
+         <Star selected={value > 0} setValue={() => setValue(1)} />
+         <Star selected={value > 1} setValue={() => setValue(2)} />
+         <Star selected={value > 2} setValue={() => setValue(3)} />
+         <Star selected={value > 3} setValue={() => setValue(4)} />
+         <Star selected={value > 4} setValue={() => setValue(5)} />
       </div>
    );
 };
 
 type StarPropsType = {
    selected: boolean;
+   setValue: () => void;
 };
 function Star(props: StarPropsType) {
-   if (props.selected === true) {
-      return (
-         <span>
-            <b>star </b>
-         </span>
-      );
-   } else {
-      return <span>star </span>;
-   }
+   return props.selected ? (
+      <span onClick={props.setValue} style={{ cursor: 'pointer' }}>
+         <b>star </b>
+      </span>
+   ) : (
+      <span onClick={props.setValue} style={{ cursor: 'pointer' }}>
+         star{' '}
+      </span>
+   );
 }

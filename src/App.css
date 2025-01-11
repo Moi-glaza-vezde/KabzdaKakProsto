@@ -1,2 +1,6 @@
-div {
+.app {
+	padding: 50px;
+}
+h3 {
+	cursor: pointer;
 }
