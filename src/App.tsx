@@ -1,30 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
-import { Accordion1, Accordion2 } from './components/accordion/Accordion';
-import { Rating } from './components/rating/Rating';
+import { Accordion } from './components/accordion/Accordion';
+import { Rating, RetingValueType } from './components/rating/Rating';
 import { OnOff } from './components/onOff/onOff';
 import { UnControlledAccordion } from './components/accordion/UnControlledAccordion';
 import { UnControlledReating } from './components/rating/UnControlledReating';
-
-function hellow() {
-   debugger;
-
-   alert('Hellow it kamasutra');
-}
-
-// hellow();
+import { UnonOff } from './components/onOff/UnonOff';
 
 function App() {
-   const value = 0 | 1 | 2 | 3 | 4 | 5;
+   let [reatingValue, setReatingValue] = useState<RetingValueType>(0);
+   let [closed, setClosed] = useState(true);
+   let [on, setOn] = useState(false);
    return (
       <div className="app">
-         <OnOff />
-
-         <UnControlledAccordion title={'Menu'} />
-         <Accordion1 closed={false} title={'Users'} />
-
-         <UnControlledReating />
-         <Rating value={3} />
+         <Rating value={reatingValue} onClick={setReatingValue} />
+         <Accordion closed={closed} title={'Users'} setClosed={setClosed} />
+         <OnOff setOn={setOn} on={on} />
+         <UnonOff onChange={setOn} />
+         {on.toString()}
+         {/* <UnControlledAccordion title={'Menu'} /> */}
+         {/* <UnControlledReating /> */}
       </div>
    );
 }

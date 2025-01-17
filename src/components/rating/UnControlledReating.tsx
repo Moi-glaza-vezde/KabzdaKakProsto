@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
-type RatingPropsType = {
-   value: 0 | 1 | 2 | 3 | 4 | 5;
-};
+
 export const UnControlledReating = () => {
-   let [value, setValue] = useState<0 | 1 | 2 | 3 | 4 | 5>(0);
+   let [value, setValue] = useState(0);
    return (
       <div>
          <Star selected={value > 0} setValue={() => setValue(1)} />
@@ -17,16 +15,16 @@ export const UnControlledReating = () => {
 
 type StarPropsType = {
    selected: boolean;
+
    setValue: () => void;
 };
 function Star(props: StarPropsType) {
-   return props.selected ? (
-      <span onClick={props.setValue} style={{ cursor: 'pointer' }}>
-         <b>star </b>
-      </span>
-   ) : (
-      <span onClick={props.setValue} style={{ cursor: 'pointer' }}>
-         star{' '}
+   return (
+      <span
+         onClick={() => {
+            props.setValue();
+         }}>
+         {props.selected ? <b> star</b> : ' start'}
       </span>
    );
 }

@@ -2,40 +2,24 @@ import React from 'react';
 type AccordionPropsType = {
    title: string;
    closed?: boolean;
+   setClosed: (value: boolean) => void;
 };
 
-export function Accordion1(props: AccordionPropsType) {
+export function Accordion(props: AccordionPropsType) {
    return (
       <div>
-         <AccordionTitle title={props.title} />
+         <AccordionTitle title={props.title} setClosed={() => props.setClosed(!props.closed)} />
          {!props.closed && <AccordionBody />}
       </div>
    );
 }
 
-export function Accordion2(props: AccordionPropsType) {
-   if (props.closed === true) {
-      return (
-         <div>
-            {true}
-            <AccordionTitle title={props.title} />
-         </div>
-      );
-   } else {
-      return (
-         <div>
-            <AccordionTitle title={props.title} />
-            <AccordionBody />
-         </div>
-      );
-   }
-}
-
 type AccordionTitlePropsType = {
    title: string;
+   setClosed: () => void;
 };
 function AccordionTitle(props: AccordionTitlePropsType) {
-   return <h3>{props.title}</h3>;
+   return <h3 onClick={() => props.setClosed()}>{props.title}</h3>;
 }
 
 function AccordionBody() {
