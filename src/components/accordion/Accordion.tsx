@@ -19,7 +19,7 @@ type AccordionTitlePropsType = {
    setClosed: () => void;
 };
 function AccordionTitle(props: AccordionTitlePropsType) {
-   return <h3 onClick={() => props.setClosed()}>{props.title}</h3>;
+   return <h3 onClick={(event) => props.setClosed()}>{props.title}</h3>;
 }
 
 function AccordionBody() {
