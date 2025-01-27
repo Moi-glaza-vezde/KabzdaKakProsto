@@ -8,11 +8,11 @@ export default {
 
 const onChangeHandler = action('onChange');
 
-export const CollapsedAccordion = () => {
-   return <Accordion closed={true} title={'Collapsed Accordion'} setClosed={onChangeHandler} />;
+export const MenuCollabsedMode = () => {
+   return <Accordion closed={true} title={'Menu'} setClosed={onChangeHandler} />;
 };
-export const OpenAccordion = () => {
-   return <Accordion closed={false} title={'Opebed Accordion'} setClosed={() => {}} />;
+export const UserCollabsedMode = () => {
+   return <Accordion closed={false} title={'Users'} setClosed={onChangeHandler} />;
 };
 export const AccordionDemo = () => {
    let [collapsed, setCollapsed] = useState(false);
