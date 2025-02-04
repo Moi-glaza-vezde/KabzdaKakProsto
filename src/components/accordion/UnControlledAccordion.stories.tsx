@@ -6,9 +6,28 @@ import { UnControlledAccordion } from './UnControlledAccordion';
 export default {
    component: UnControlledAccordion,
 };
+const items =  [
 
+   {
+      id: 1,
+      title: 'Dima',
+      value: '',
+   },
+   {
+      id: 2,
+      title: 'Paha',
+      value: '',
+   },
+
+   {
+      id: 3,
+      title: 'Peta',
+      value: '',
+   }
+
+]
 const onChangeHandler = action('onChange');
 
 export const AccordionDemo = () => {
-   return <Accordion closed={false} title={'Opebed Accordion'} setClosed={() => {}} />;
+   return <Accordion items={items} closed={false} title={'Opebed Accordion'} setClosed={() => {}} />;
 };
