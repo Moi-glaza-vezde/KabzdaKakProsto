@@ -6,6 +6,7 @@ import {OnOff} from './components/onOff/onOff';
 import {UnControlledAccordion} from './components/accordion/UnControlledAccordion';
 import {UnControlledReating} from './components/rating/UnControlledReating';
 import {UnonOff} from './components/onOff/UnonOff';
+import {Clock} from './components/Clock/Clock';
 
 function App() {
     let [reatingValue, setReatingValue] = useState<RetingValueType>(0);
@@ -33,11 +34,12 @@ function App() {
     ]
     return (
         <div className="app">
-            <Rating value={reatingValue} onClick={setReatingValue}/>
-            <Accordion closed={closed} title={'Users'} setClosed={setClosed} items={items}/>
-            <OnOff setOn={setOn} on={on}/>
-            <UnonOff onChange={setOn}/>
-            {on.toString()}
+            <Clock/>
+            {/*<Rating value={reatingValue} onClick={setReatingValue}/>*/}
+            {/*<Accordion closed={closed} title={'Users'} setClosed={setClosed} items={items}/>*/}
+            {/*<OnOff setOn={setOn} on={on}/>*/}
+            {/*<UnonOff onChange={setOn}/>*/}
+            {/*{on.toString()}*/}
             {/* <UnControlledAccordion title={'Menu'} /> */}
             {/* <UnControlledReating /> */}
         </div>
