@@ -34,14 +34,9 @@ function App() {
     ]
     return (
         <div className="app">
-            <Clock/>
-            {/*<Rating value={reatingValue} onClick={setReatingValue}/>*/}
-            {/*<Accordion closed={closed} title={'Users'} setClosed={setClosed} items={items}/>*/}
-            {/*<OnOff setOn={setOn} on={on}/>*/}
-            {/*<UnonOff onChange={setOn}/>*/}
-            {/*{on.toString()}*/}
-            {/* <UnControlledAccordion title={'Menu'} /> */}
-            {/* <UnControlledReating /> */}
+            <Clock mode={'digital'} />
+            <Clock mode={'analog'}/>
+
         </div>
     );
 }
